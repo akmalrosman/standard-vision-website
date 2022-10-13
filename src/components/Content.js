@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Logo from "../images/logo.png";
 import IconWindows from "../images/windows.svg";
 import IconApple from "../images/apple.svg";
+import IconLinux from "../images/linux.svg";
 
 export default function Content() {
   return (
@@ -23,12 +24,14 @@ export default function Content() {
             </li>
         </Menu>
 
-        <h1>Standard Vision</h1>
-        <p>
-          A flowchart image processing GUI aimed at making chaining image
-          processing tasks easy, intuitive, and customizable. Standard Vision is
-          still a work in progress project.
-        </p>
+        <ContentWrapper>
+            <h1>Standard Vision</h1>
+            <p>
+            A flowchart image processing GUI aimed at making chaining image
+            processing tasks easy, intuitive, and customizable. Standard Vision is
+            still a work in progress project.
+            </p>
+        </ContentWrapper>
 
         <ButtonWrapper>
             <button>
@@ -36,6 +39,9 @@ export default function Content() {
             </button>
             <button>
                 <img src={IconApple} alt="Download" /> Download for Mac
+            </button>
+            <button>
+                <img src={IconLinux} alt="Download" /> Download for Linux
             </button>
         </ButtonWrapper>
 
@@ -172,6 +178,12 @@ const Menu = styled.ul`
             }
         }
 `;
+
+const ContentWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+`
 
 const ButtonWrapper = styled.div`
     display: flex;
