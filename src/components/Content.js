@@ -13,7 +13,7 @@ export default function Content() {
   const downloadWindows = (e) => {
     e.preventDefault()
     Axios({
-        url:"https://standard-vision-server.vercel.app/download-windows",
+        url:"https://shielded-wave-25068.herokuapp.com/download-windows",
         method:"GET",
         responseType:"blob"
 
@@ -25,7 +25,7 @@ export default function Content() {
   const downloadLinux = (e) => {
     e.preventDefault()
     Axios({
-        url:"https://standard-vision-server.vercel.app/download-linux",
+        url:"https://shielded-wave-25068.herokuapp.com/download-linux",
         method:"GET",
         responseType:"blob"
 
