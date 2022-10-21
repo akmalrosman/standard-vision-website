@@ -1,11 +1,39 @@
 import styled from "styled-components";
 
+import Axios from "axios";
+import FileDownload from "js-file-download";
+
 import Logo from "../images/logo.png";
 import IconWindows from "../images/windows.svg";
-import IconApple from "../images/apple.svg";
+// import IconApple from "../images/apple.svg";
 import IconLinux from "../images/linux.svg";
 
 export default function Content() {
+
+  const downloadWindows = (e) => {
+    e.preventDefault()
+    Axios({
+        url:"https://standard-vision-server.vercel.app/download-windows",
+        method:"GET",
+        responseType:"blob"
+
+    }).then((res) => {
+        FileDownload(res.data, "standard-vision-win32-x64.zip")
+    })
+  }
+
+  const downloadLinux = (e) => {
+    e.preventDefault()
+    Axios({
+        url:"https://standard-vision-server.vercel.app/download-linux",
+        method:"GET",
+        responseType:"blob"
+
+    }).then((res) => {
+        FileDownload(res.data, "standard-vision-linux-x64.zip")
+    })
+  }
+
   return (
     <Main>
 
@@ -14,14 +42,11 @@ export default function Content() {
                 <img src={Logo} alt="Logo" />
             </li>
             <li>
-                <a href="/">Home</a>
+                <a href="https://imagineaigroup.com/">Home</a>
             </li>
-            <li>
-                <a href="/">Download</a>
-            </li>
-            <li>
+            {/* <li>
                 <button>Documentation</button>
-            </li>
+            </li> */}
         </Menu>
 
         <ContentWrapper>
@@ -34,13 +59,13 @@ export default function Content() {
         </ContentWrapper>
 
         <ButtonWrapper>
-            <button>
+            <button onClick={(e) =>downloadWindows(e)}>
                 <img src={IconWindows} alt="Download" /> Download for Windows
             </button>
-            <button>
+            {/* <button>
                 <img src={IconApple} alt="Download" /> Download for Mac
-            </button>
-            <button>
+            </button> */}
+            <button onClick={(e) =>downloadLinux(e)}>
                 <img src={IconLinux} alt="Download" /> Download for Linux
             </button>
         </ButtonWrapper>
