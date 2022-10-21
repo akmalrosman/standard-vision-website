@@ -1,38 +1,11 @@
 import styled from "styled-components";
 
-import Axios from "axios";
-import FileDownload from "js-file-download";
-
 import Logo from "../images/logo.png";
 import IconWindows from "../images/windows.svg";
 // import IconApple from "../images/apple.svg";
 import IconLinux from "../images/linux.svg";
 
 export default function Content() {
-
-  const downloadWindows = (e) => {
-    e.preventDefault()
-    Axios({
-        url:"https://shielded-wave-25068.herokuapp.com/download-windows",
-        method:"GET",
-        responseType:"blob"
-
-    }).then((res) => {
-        FileDownload(res.data, "standard-vision-win32-x64.zip")
-    })
-  }
-
-  const downloadLinux = (e) => {
-    e.preventDefault()
-    Axios({
-        url:"https://shielded-wave-25068.herokuapp.com/download-linux",
-        method:"GET",
-        responseType:"blob"
-
-    }).then((res) => {
-        FileDownload(res.data, "standard-vision-linux-x64.zip")
-    })
-  }
 
   return (
     <Main>
@@ -59,15 +32,21 @@ export default function Content() {
         </ContentWrapper>
 
         <ButtonWrapper>
-            <button onClick={(e) =>downloadWindows(e)}>
-                <img src={IconWindows} alt="Download" /> Download for Windows
-            </button>
-            {/* <button>
-                <img src={IconApple} alt="Download" /> Download for Mac
-            </button> */}
-            <button onClick={(e) =>downloadLinux(e)}>
-                <img src={IconLinux} alt="Download" /> Download for Linux
-            </button>
+            <a href="https://shielded-wave-25068.herokuapp.com/download-windows" >
+                <button >
+                    <img src={IconWindows} alt="Download" /> Download for Windows
+                </button>
+            </a>
+                {/* <a href="/">
+                    <button>
+                        <img src={IconApple} alt="Download" /> Download for Mac
+                    </button>
+                </a> */}
+            <a href="https://shielded-wave-25068.herokuapp.com/download-linux" >    
+                <button >
+                    <img src={IconLinux} alt="Download" /> Download for Linux
+                </button>
+            </a>    
         </ButtonWrapper>
 
     </Main>
@@ -214,4 +193,8 @@ const ButtonWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    a {
+        text-decoration: none;
+    }
 `;
