@@ -18,7 +18,7 @@ export default function App() {
       {/* Content layout */}
       <Content />
 
-      {/* Content Social */}
+      {/* Social layout */}
       <Social />
 
     </Wrapper>
