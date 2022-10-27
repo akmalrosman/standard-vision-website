@@ -7,10 +7,12 @@ import IconLinux from "../images/linux.svg";
 
 export default function Content() {
 
+    // Download function for windows
     const downloadWindows = () => {
         window.location.href="https://shielded-wave-25068.herokuapp.com/download-windows"
     }
 
+    // Download function for linux 
     const downloadLinux = () => {
         window.location.href="https://shielded-wave-25068.herokuapp.com/download-linux"
     }
