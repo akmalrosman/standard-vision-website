@@ -9,12 +9,12 @@ export default function Content() {
 
     // Download function for windows
     const downloadWindows = () => {
-        window.location.href="https://shielded-wave-25068.herokuapp.com/download-windows"
+        window.location.href=process.env.REACT_APP_WINDOWS_URL
     }
 
     // Download function for linux 
     const downloadLinux = () => {
-        window.location.href="https://shielded-wave-25068.herokuapp.com/download-linux"
+        window.location.href=process.env.REACT_APP_LINUX_URL
     }
 
   return (
