@@ -7,6 +7,14 @@ import IconLinux from "../images/linux.svg";
 
 export default function Content() {
 
+    const downloadWindows = () => {
+        window.location.href="https://shielded-wave-25068.herokuapp.com/download-windows"
+    }
+
+    const downloadLinux = () => {
+        window.location.href="https://shielded-wave-25068.herokuapp.com/download-linux"
+    }
+
   return (
     <Main>
 
@@ -32,21 +40,15 @@ export default function Content() {
         </ContentWrapper>
 
         <ButtonWrapper>
-            <a href="https://shielded-wave-25068.herokuapp.com/download-windows" >
-                <button >
-                    <img src={IconWindows} alt="Download" /> Download for Windows
-                </button>
-            </a>
-                {/* <a href="/">
-                    <button>
-                        <img src={IconApple} alt="Download" /> Download for Mac
-                    </button>
-                </a> */}
-            <a href="https://shielded-wave-25068.herokuapp.com/download-linux" >    
-                <button >
-                    <img src={IconLinux} alt="Download" /> Download for Linux
-                </button>
-            </a>    
+            <button onClick={downloadWindows} >
+                <img src={IconWindows} alt="Download Windows" /> Download for Windows
+            </button>
+            {/* <button>
+                <img src={IconApple} alt="Download Mac" /> Download for Mac
+            </button> */}
+            <button onClick={downloadLinux} >
+                <img src={IconLinux} alt="Download Linux" /> Download for Linux
+            </button>
         </ButtonWrapper>
 
     </Main>
