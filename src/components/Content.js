@@ -21,15 +21,13 @@ export default function Content() {
     <Main>
 
         <Menu>
-            <li>
-                <img src={Logo} alt="Logo" />
-            </li>
+            <img className="logo" src={Logo} alt="Logo" />
             <li>
                 <a href="https://imagineaigroup.com/">Home</a>
             </li>
-            {/* <li>
-                <button>Documentation</button>
-            </li> */}
+            <li>
+                <button>Sign Up</button>
+            </li>
         </Menu>
 
         <ContentWrapper>
@@ -142,6 +140,7 @@ const Main = styled.div`
 
 const Menu = styled.ul`
     display: flex;
+    justify-content: flex-end;
     gap: 30px;
     align-items: center;
     margin: 0 30px 0 100px;
@@ -185,6 +184,10 @@ const Menu = styled.ul`
                 display: none;
             }
         }
+    
+    .logo {
+        margin-right: auto;
+    }
 `;
 
 const ContentWrapper = styled.div`
