@@ -5,7 +5,7 @@ import IconYoutube from "../images/youtube.svg";
 
 export default function Social() {
   return (
-    <Main>
+    <Main id="social">
 
         <div />
         <img src={IconTwitter} alt="Twitter" />

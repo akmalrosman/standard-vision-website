@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 import Logo from "../images/logo.png";
@@ -5,7 +6,11 @@ import IconWindows from "../images/windows.svg";
 // import IconApple from "../images/apple.svg";
 import IconLinux from "../images/linux.svg";
 
+import ModalSignUp from "./ModalSignUp";
+
 export default function Content() {
+
+    const [openModal, setOpenModal] = useState(false);
 
     // Download function for windows
     const downloadWindows = () => {
@@ -17,17 +22,27 @@ export default function Content() {
         window.location.href=process.env.REACT_APP_LINUX_URL
     }
 
+    if (openModal) {
+        document.getElementById('spline').style.filter = 'blur(15px)'
+        document.getElementById('content').style.filter = 'blur(15px)'
+        document.getElementById('social').style.filter = 'blur(15px)'
+    }
+    else if (setOpenModal) {
+        document.getElementById('spline').style.filter = 'blur(0px)'
+        document.getElementById('content').style.filter = 'blur(0px)'
+        document.getElementById('social').style.filter = 'blur(0px)'
+    }
+
   return (
-    <Main>
+    <>
+    <Main id="content">
 
         <Menu>
             <img className="logo" src={Logo} alt="Logo" />
             <li>
                 <a href="https://imagineaigroup.com/">Home</a>
             </li>
-            <li>
-                <button>Sign Up</button>
-            </li>
+            <button onClick={() => setOpenModal(true)}>Sign Up</button>
         </Menu>
 
         <ContentWrapper>
@@ -52,6 +67,11 @@ export default function Content() {
         </ButtonWrapper>
 
     </Main>
+
+    <ModalSignUp 
+    open={openModal} 
+    onClose={() => setOpenModal(false)} />
+    </>
   )
 }
 

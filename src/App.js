@@ -11,6 +11,7 @@ export default function App() {
 
       {/* Spline 3D animated */}
       <Spline
+        id="spline"
         className="spline"
         scene="https://prod.spline.design/hEFpSY4Lxaa7eHgx/scene.splinecode"
       />
