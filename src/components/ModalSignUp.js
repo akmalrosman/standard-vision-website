@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import styled from "styled-components";
-import nft from "../images/nft.jpg";
+import joinus from "../images/joinus.jpg";
 
 export default function ModalSignUp({ open, onClose }) {
   const [name, setName] = useState("");
@@ -45,7 +45,7 @@ export default function ModalSignUp({ open, onClose }) {
           e.stopPropagation();
         }}
       >
-        <img src={nft} alt="/" />
+        <img src={joinus} alt="/" />
         <ModalRight>
           <CloseButton onClick={onClose}>X</CloseButton>
           <form onSubmit={registerUser}>
@@ -158,7 +158,6 @@ const ModalContainer = styled.div`
 
   input[type="submit"] {
     width: 100%;
-    height: 5 @px;
     border: 1px solid;
     background: rgba(255, 79, 79, 1);
     border-radius: 25px;
