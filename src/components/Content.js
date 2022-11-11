@@ -22,20 +22,9 @@ export default function Content() {
         window.location.href=process.env.REACT_APP_LINUX_URL
     }
 
-    // if (openModal) {
-    //     document.getElementById('spline').style.filter = 'blur(15px)'
-    //     document.getElementById('content').style.filter = 'blur(15px)'
-    //     document.getElementById('social').style.filter = 'blur(15px)'
-    // }
-    // else if (setOpenModal) {
-    //     document.getElementById('spline').style.filter = 'blur(0px)'
-    //     document.getElementById('content').style.filter = 'blur(0px)'
-    //     document.getElementById('social').style.filter = 'blur(0px)'
-    // }
-
   return (
     <>
-    <Main id="content">
+    <Main>
 
         <Menu>
             <img className="logo" src={Logo} alt="Logo" />
@@ -69,8 +58,10 @@ export default function Content() {
     </Main>
 
     <ModalSignUp 
-    open={openModal} 
-    onClose={() => setOpenModal(false)} />
+    open={openModal}
+    onClose={() => setOpenModal(false)}
+    />
+
     </>
   )
 }
